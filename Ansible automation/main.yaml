@@ -1,4 +1,10 @@
 ---
+- hosts: testnodes
+  become: yes
+  remote_user: devopsadmin
+  roles:
+        - tomcatrole
+---
 tasks:
   - name: Make sure we are able to connect server
     ping: null	
