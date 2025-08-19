@@ -2,6 +2,7 @@ Practice handling Git merge conflicts by creating separate branches, making conf
 
 
 Outcome - 
+
 Successfully learned how to handle Git merge conflicts.
 
 Practiced using merge tools like vimdiff2.
