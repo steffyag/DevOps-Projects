@@ -1,0 +1,28 @@
+name: Deploy CloudFormation Template
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up AWS CLI
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: us-east-1
+          aws-access-key-id: **********************
+          aws-secret-access-key: ****************************
+  
+      - name: Deploy CloudFormation stack
+        run: |
+          aws cloudformation deploy \
+            --stack-name my-new-stack \
+            --template-file templates/Ec2stack.yml \
+            --capabilities CAPABILITY_IAM
